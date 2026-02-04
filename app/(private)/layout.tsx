@@ -1,11 +1,9 @@
+import Sidebar03 from "@/components/sidebar-03";
+
 export default function PrivateLayout({
-    children,
+  children,
 }: Readonly<{
-    children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-    return (
-        <html lang="en">
-            <body>{children}</body>
-        </html>
-    );
+  return <Sidebar03>{children}</Sidebar03>;
 }
