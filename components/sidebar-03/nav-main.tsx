@@ -1,10 +1,6 @@
 "use client";
 
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import {
   SidebarMenu,
   SidebarMenuButton,
@@ -48,9 +44,7 @@ export default function DashboardNavigation({ routes }: { routes: Route[] }) {
             {hasSubRoutes ? (
               <Collapsible
                 open={isOpen}
-                onOpenChange={(open) =>
-                  setOpenCollapsible(open ? route.id : null)
-                }
+                onOpenChange={(open) => setOpenCollapsible(open ? route.id : null)}
                 className="w-full"
               >
                 <CollapsibleTrigger asChild>
@@ -60,14 +54,12 @@ export default function DashboardNavigation({ routes }: { routes: Route[] }) {
                       isOpen
                         ? "bg-sidebar-muted text-foreground"
                         : "text-muted-foreground hover:bg-sidebar-muted hover:text-foreground",
-                      isCollapsed && "justify-center"
+                      isCollapsed && "justify-center",
                     )}
                   >
                     {route.icon}
                     {!isCollapsed && (
-                      <span className="ml-2 flex-1 text-sm font-medium">
-                        {route.title}
-                      </span>
+                      <span className="ml-2 flex-1 text-sm font-medium">{route.title}</span>
                     )}
                     {!isCollapsed && hasSubRoutes && (
                       <span className="ml-auto">
@@ -111,15 +103,11 @@ export default function DashboardNavigation({ routes }: { routes: Route[] }) {
                   prefetch={true}
                   className={cn(
                     "flex items-center rounded-lg px-2 transition-colors text-muted-foreground hover:bg-sidebar-muted hover:text-foreground",
-                    isCollapsed && "justify-center"
+                    isCollapsed && "justify-center",
                   )}
                 >
                   {route.icon}
-                  {!isCollapsed && (
-                    <span className="ml-2 text-sm font-medium">
-                      {route.title}
-                    </span>
-                  )}
+                  {!isCollapsed && <span className="ml-2 text-sm font-medium">{route.title}</span>}
                 </Link>
               </SidebarMenuButton>
             )}

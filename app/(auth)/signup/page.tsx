@@ -6,13 +6,7 @@ import { Label } from "@/components/ui/label";
 import { JSX, SVGProps } from "react";
 
 const Logo = (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
-  <svg
-    fill="currentColor"
-    height="48"
-    viewBox="0 0 40 48"
-    width="40"
-    {...props}
-  >
+  <svg fill="currentColor" height="48" viewBox="0 0 40 48" width="40" {...props}>
     <clipPath id="a">
       <path d="m0 0h40v48h-40z" />
     </clipPath>

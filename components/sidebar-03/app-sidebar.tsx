@@ -10,7 +10,6 @@ import {
 } from "@/components/ui/sidebar";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { Home } from "lucide-react";
 import { Logo } from "@/components/sidebar-03/logo";
 import type { Route } from "./nav-main";
 import DashboardNavigation from "@/components/sidebar-03/nav-main";
@@ -22,7 +21,7 @@ const dashboardRoutes: Route[] = [
   {
     id: "messages",
     title: "Messages",
-    icon: <HugeiconsIcon icon={ChatIcon}/>,
+    icon: <HugeiconsIcon icon={ChatIcon} />,
     link: "/messages",
   },
 ];
@@ -32,7 +31,7 @@ const data = {
     name: "shadcn",
     email: "m@example.com",
     avatar: "/avatars/shadcn.jpg",
-  }
+  },
 };
 
 export function DashboardSidebar() {
@@ -71,7 +70,7 @@ export function DashboardSidebar() {
         <DashboardNavigation routes={dashboardRoutes} />
       </SidebarContent>
       <SidebarFooter className="px-2 pb-4">
-        <NavUser user={data.user}/>
+        <NavUser user={data.user} />
       </SidebarFooter>
     </Sidebar>
   );
