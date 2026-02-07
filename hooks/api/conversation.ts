@@ -47,8 +47,7 @@ type SendMessagePayload = {
 const conversationKeys = {
   all: ["conversation"] as const,
   list: (userId: string) => [...conversationKeys.all, "list", userId] as const,
-  detail: (conversationId: string) =>
-    [...conversationKeys.all, "detail", conversationId] as const,
+  detail: (conversationId: string) => [...conversationKeys.all, "detail", conversationId] as const,
 };
 
 const getAllConversations = async (userId: string) => {
@@ -62,7 +61,10 @@ const getConversationById = async (conversationId: string) => {
 };
 
 const sendMessage = async (payload: SendMessagePayload) => {
-  return api.post<ApiResponse<Message>, SendMessagePayload>("/api/v1/conversation/send/message", payload);
+  return api.post<ApiResponse<Message>, SendMessagePayload>(
+    "/api/v1/conversation/send/message",
+    payload,
+  );
 };
 
 const useAllConversationsQuery = (userId?: string) => {
